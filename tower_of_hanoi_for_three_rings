@@ -1,0 +1,28 @@
+
+
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+void tower_of_hanoi(int n,int s,int h,int d,int &count){
+    count++;
+    if (n==1){
+        cout<<"Moving from s-"<<s<<" to d-"<<d<<endl;
+        return;
+    }
+    tower_of_hanoi(n-1,s,h,d,count);
+    cout<<"Moving from s-"<<s<<" to d-"<<d<<endl;
+    tower_of_hanoi(n-1,h,d,s,count);
+    
+}
+int main()
+{
+    int n=3;
+    int s=1;// source rod
+    int h=2;// helper rod
+    int d=3;//destination rod
+    int count=0;
+tower_of_hanoi(3,1,2,3,count);
+cout<<count<<" ";
+    return 0;
+}
